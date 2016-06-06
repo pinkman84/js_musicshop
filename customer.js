@@ -12,13 +12,17 @@ Customer.prototype = {
     for(i = 0; i < shop.stock.length; i++){
       if(shop.stock[i].title === record){
         var purchase = shop.stock[i];
-        shop.sellRecord(purchase);
+      
       }
-      this.wallet -= purchase.price
-      this.basket.push(purchase)
+      this.wallet -= purchase.price;
+      this.basket.push(purchase);
+      shop.sellRecord(purchase);
+      break
+      // console.log(purchase.price);
+      
      
     }
-    return this.basket
+    // return this.basket
   },
 
   sellRecord: function(title, shop){

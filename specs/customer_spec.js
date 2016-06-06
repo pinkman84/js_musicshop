@@ -19,15 +19,15 @@ describe('customer tester', function(){
       price: 15    
     }
     ]
-  })
+  });
 
   it('should have a name', function(){
     assert.equal('Aidan', cust.name);
-  })
+  });
 
   it('should have money', function(){
     assert.equal(50, cust.wallet);
-  })
+  });
 
   it('should be able to buy a record', function(){
     cust.buyRecord(rs, 'Franz Ferdinand');
@@ -38,9 +38,15 @@ describe('customer tester', function(){
       title: 'Franz Ferdinand',
       price: 12    
     }, cust.basket[0])
-  })
+  //   assert.equal(1, cust.basket.length)
+  });
 
-  it('should reduce funds')
+  it('should reduce funds', function(){
+    cust.buyRecord(rs, 'Franz Ferdinand');
+    console.log(cust.basket);
+    assert.equal(38, cust.wallet);
+  }
+  );
 
 
 })
