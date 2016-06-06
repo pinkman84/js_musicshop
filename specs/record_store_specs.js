@@ -31,7 +31,7 @@ describe ('shop test', function(){
   it('should be able to sell a record', function(){
     recordStore1.addRecord('Tyrannosaurus Hives', 'The Hives', 10);
     recordStore1.addRecord('oasis', 'whats the story', 10);
-    console.log(recordStore1.stock)
+    // console.log(recordStore1.stock)
     recordStore1.sellRecord('The Hives');
     assert.equal(90, recordStore1.balance);
   })

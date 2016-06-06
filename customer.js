@@ -8,20 +8,25 @@ var Customer = function(name, wallet){
 Customer.prototype = {
   //assign a splice to the inventory array where the record parameter = stock that comes back. ie perform a loop with an if statement, then .push() the variable into this.basket as an added feature this should also reduce the wallet amount by the record price 
   buyRecord: function(shop, record){
-    for(i = 0; i < shop.inventory.length; i++){
-      if(shop.inventory[i].title === record){
-        var purchase = shop.inventory[i]
-        shop.sellRecord(record);
+    // console.log("SHOP", shop);
+    for(i = 0; i < shop.stock.length; i++){
+      if(shop.stock[i].title === record){
+        var purchase = shop.stock[i];
+        shop.sellRecord(purchase);
       }
       this.wallet -= purchase.price
       this.basket.push(purchase)
+     
     }
+    return this.basket
   },
 
-  sellRecord: function(title){
-    for(i = 0; i < this){
-      if(record.title === title){
-
+  sellRecord: function(title, shop){
+    for(i = 0; i < this.basket.length; i++){
+      if(this.basket[i].title === title ){
+        this.basket.splice(i, 1);
+        this.wallet += this.basket.price;
+        this.shop.addRecord(this.basket[i]);
       }
     }
   }

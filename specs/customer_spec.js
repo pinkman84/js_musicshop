@@ -4,10 +4,10 @@ var assert = require('chai').assert;
 
 describe('customer tester', function(){
   beforeEach(function(){
-    customer.wallet = 30;
-    customer.basket = [];
-    recordStore.balance = 100;
-    recordStore.stock = [
+    cust = new customer('Aidan', 50);
+    rs = new recordStore('music shop', 'Edinburgh')
+    rs.balance = 100;
+    rs.stock = [
     {
       artist: 'Franz Ferdinand',
       title: 'Franz Ferdinand',
@@ -21,5 +21,26 @@ describe('customer tester', function(){
     ]
   })
 
-  it('should')
+  it('should have a name', function(){
+    assert.equal('Aidan', cust.name);
+  })
+
+  it('should have money', function(){
+    assert.equal(50, cust.wallet);
+  })
+
+  it('should be able to buy a record', function(){
+    cust.buyRecord(rs, 'Franz Ferdinand');
+    // console.log(rs.stock);
+    console.log(cust.basket);
+    assert.deepEqual({
+      artist: 'Franz Ferdinand',
+      title: 'Franz Ferdinand',
+      price: 12    
+    }, cust.basket[0])
+  })
+
+  it('should reduce funds')
+
+
 })
