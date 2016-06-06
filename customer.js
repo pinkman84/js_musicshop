@@ -19,7 +19,11 @@ Customer.prototype = {
   },
 
   sellRecord: function(title){
+    for(i = 0; i < this){
+      if(record.title === title){
 
+      }
+    }
   }
 
 }
