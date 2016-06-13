@@ -1,0 +1,27 @@
+module.exports = [
+  {
+    "artist": "Oasis",
+    "title": "Definitely Maybe",
+    "price": 10
+  },
+  {
+    "artist": "The Hives",
+    "title": "Tyranosaurus Hives",
+    "price": 12
+  },
+  {
+    "artist": "Foo Fighters",
+    "title": "One By One",
+    "price": 11.50
+  },
+  {
+    "artist": "Green Day",
+    "title": "Nimrod",
+    "price": 15
+  },
+  {
+    "artist": "Tenacious D",
+    "title": "Tenacious D",
+    "price": 50
+  }
+]
