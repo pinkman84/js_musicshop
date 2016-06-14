@@ -14,28 +14,20 @@ Viewer.prototype = {
   render: function(){
 
   var info = document.getElementById('info');
-  var stock = document.getElementById('stock');
+  // var stock = document.getElementById('stock');
 
   info.innerText = "Welcome to " + this.shop.name + ", Proudly serving " + this.shop.city + " for all your music needs."
 
-
-  for (album of this.shop.stock){
-    albumList = document.createElement('li');
-    albumList.innerText = "Album: " + album.title + "\n" +
-                          "Artist: " + album.artist + "\n" +
-                          "Price: " + album.price
-    stock.appendChild(albumList);
-  }
+  this.shop.inventory();
+ var addStock = document.getElementById('add-stock')
+ addStock.onclick = function(event){
   var newArtist = document.getElementById('artist')
   var newTitle = document.getElementById('title')
   var newPrice = document.getElementById('price')
-  var addStock = document.getElementById('add-stock')
-  addStock.onclick = function(){
-    stock.innerHtml =""
-    this.shop.addRecord(newArtist, newTitle, newPrice)
-    this.shop.inventory();
-    
-  }.bind(this);
+  
+  this.shop.addRecord(newArtist.value, newTitle.value, newPrice.value)
+  this.shop.inventory;
+    }.bind(this);
   }
 }
 

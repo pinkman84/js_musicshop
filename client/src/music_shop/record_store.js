@@ -15,10 +15,15 @@ RecordStore.prototype = {
     this.balance -= p;
     },
     inventory: function(){
+      var stock = document.getElementById('stock');
       for(album of this.stock){
-        var inventory =  ('We have ' + album.title + ' by ' + album.artist + ' which retails at ' + album.price);
+        albumList = document.createElement('li');
+        albumList.innerText = "Album: " + album.title + "\n" +
+                              "Artist: " + album.artist + "\n" +
+                              "Price: " + album.price
+            stock.appendChild(albumList);
       }
-      return inventory;
+      // return inventory;
     },
     //need to make a list inventory function, so loop through this.stock and return each records name might be nice to add a quantity option too.
 
